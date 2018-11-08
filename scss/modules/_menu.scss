@@ -1,0 +1,29 @@
+//@import '../variables/text';
+
+.menu_center{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.menu_title{
+    font-family: $title-font;
+    font-weight: 700;
+    font-size: 4.8rem;
+    padding-bottom: .5rem;
+    color: $black;
+}
+
+.menu_settings{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.menu_settings_title{
+    min-width: 100px;
+    font-size: 2.4rem;
+    padding-left: 1.8rem;
+    color: $black;
+}
+

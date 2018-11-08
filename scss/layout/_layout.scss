@@ -1,0 +1,42 @@
+//@import '../variables/text';
+
+%fill-window-vertical{
+    height: 100vh;
+}
+
+.menu{
+    @extend %fill-window-vertical;
+    flex: .15;
+    min-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game{
+    @extend %fill-window-vertical;
+    flex: .85;
+}
+
+.container{
+    @extend %fill-window-vertical;
+    display: flex;
+    flex-direction: column;
+    font-family: $default-font;
+}
+
+@media(min-width: 700px){
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu{
+        flex: .25;
+    }
+    
+    .game{
+        flex: .75;
+    }
+}
