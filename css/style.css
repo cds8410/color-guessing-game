@@ -58,7 +58,7 @@
   display: flex;
   justify-content: space-between; }
 
-.button_unclicked, .button_clicked {
+.button {
   font-size: 2rem;
   flex-grow: 1;
   text-align: center;
@@ -66,12 +66,10 @@
   padding-bottom: 1rem;
   margin: .9rem;
   border: #34314c 0.3rem solid;
-  transition: all .25s; }
-
-.button_unclicked {
+  transition: all .25s;
   box-shadow: 0rem 0.5rem 0.15rem rgba(0, 0, 0, 0.15); }
 
-.button_unclicked:hover {
+.button:hover {
   background: rgba(52, 49, 76, 0.25);
   transform: translateY(-0.3rem);
   box-shadow: 0rem 0.9rem 0.15rem rgba(0, 0, 0, 0.12); }

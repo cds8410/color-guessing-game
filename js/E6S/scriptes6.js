@@ -13,11 +13,13 @@ let theme = 'light';
 
 rgb.addEventListener('click', ()=>{
     mode = 'rgb';
-    rgb.classList.toggle('');
-    hex.classList.toggle('');
+    rgb.classList.toggle('button_clicked');
+    hex.classList.toggle('button_clicked');
 });
 hex.addEventListener('click', ()=>{
     mode = 'hex';
+    rgb.classList.toggle('button_clicked');
+    hex.classList.toggle('button_clicked');
 });
 
 easy.addEventListener('click', ()=>{
@@ -34,3 +36,6 @@ dark.addEventListener('click', ()=>{
     theme = 'dark';
 });
 
+function toggleAll(){
+
+}

@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 
-%button_template{
+.button{
     font-size: 2rem;
     flex-grow: 1;
     text-align: center;
@@ -12,21 +12,16 @@
     margin: .9rem;
     border: $black .3rem solid;
     transition: all .25s;
-}
-
-.button_unclicked{
-    @extend %button_template;
     box-shadow: 0rem .5rem .15rem rgba(0, 0, 0, .15);
 }
 
-.button_unclicked:hover{
+.button:hover{
     background: rgba(52,49,76,.25);
     transform: translateY(-0.3rem);
     box-shadow: 0rem .9rem .15rem rgba(0, 0, 0, .12);
 }
 
 .button_clicked{
-    @extend %button_template;
     transform: translateY(.5rem);
     background: $black;
     color: white;
