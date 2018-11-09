@@ -7,4 +7,30 @@ const hard = document.getElementById('game_difficulty_hard');
 const light = document.getElementById('game_theme_light');
 const dark = document.getElementById('game_theme_dark');
 
-let onState = true;
+let mode = 'rgb';
+let difficulty = 'easy';
+let theme = 'light';
+
+rgb.addEventListener('click', ()=>{
+    mode = 'rgb';
+    rgb.classList.toggle('');
+    hex.classList.toggle('');
+});
+hex.addEventListener('click', ()=>{
+    mode = 'hex';
+});
+
+easy.addEventListener('click', ()=>{
+    difficulty = 'easy';
+});
+hard.addEventListener('click', ()=>{
+    difficulty = 'hard';
+});
+
+light.addEventListener('click', ()=>{
+    theme = 'light';
+});
+dark.addEventListener('click', ()=>{
+    theme = 'dark';
+});
+

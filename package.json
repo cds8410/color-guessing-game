@@ -9,6 +9,9 @@
   "author": "Collin Snyder",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "babel-cli": "^6.26.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2"
