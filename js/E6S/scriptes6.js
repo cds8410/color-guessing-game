@@ -11,31 +11,50 @@ let mode = 'rgb';
 let difficulty = 'easy';
 let theme = 'light';
 
-rgb.addEventListener('click', ()=>{
-    mode = 'rgb';
-    rgb.classList.toggle('button_clicked');
-    hex.classList.toggle('button_clicked');
-});
-hex.addEventListener('click', ()=>{
-    mode = 'hex';
-    rgb.classList.toggle('button_clicked');
-    hex.classList.toggle('button_clicked');
-});
-
-easy.addEventListener('click', ()=>{
-    difficulty = 'easy';
-});
-hard.addEventListener('click', ()=>{
-    difficulty = 'hard';
-});
-
-light.addEventListener('click', ()=>{
-    theme = 'light';
-});
-dark.addEventListener('click', ()=>{
-    theme = 'dark';
-});
-
-function toggleAll(){
-
+function twoButtonToggle(btn1, btn2) {
+    btn1.classList.toggle('button_unclicked');
+    btn1.classList.toggle('button_clicked');
+    btn2.classList.toggle('button_unclicked');
+    btn2.classList.toggle('button_clicked');
 }
+
+rgb.addEventListener('click', () => {
+    mode = 'rgb';
+    if (rgb.classList.contains('button_unclicked')) {
+        console.log(1);
+        twoButtonToggle(rgb, hex);
+    }
+});
+
+hex.addEventListener('click', () => {
+    mode = 'hex';
+    if (hex.classList.contains('button_unclicked')) {
+        twoButtonToggle(rgb, hex);
+    }
+});
+
+easy.addEventListener('click', () => {
+    difficulty = 'easy';
+    if (easy.classList.contains('button_unclicked')) {
+        twoButtonToggle(easy, hard);
+    }
+});
+hard.addEventListener('click', () => {
+    difficulty = 'hard';
+    if (hard.classList.contains('button_unclicked')) {
+        twoButtonToggle(easy, hard);
+    }
+});
+
+light.addEventListener('click', () => {
+    theme = 'light';
+    if (light.classList.contains('button_unclicked')) {
+        twoButtonToggle(light, dark);
+    }
+});
+dark.addEventListener('click', () => {
+    theme = 'dark';
+    if (dark.classList.contains('button_unclicked')) {
+        twoButtonToggle(light, dark);
+    }
+});

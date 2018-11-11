@@ -3,21 +3,27 @@
   margin: 0px;
   font-size: 10px; }
 
-.menu, .game, .container {
-  height: 100vh; }
-
 .menu {
-  flex: .15;
-  min-height: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  border-bottom: #34314c 0.5rem solid;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column; }
+  padding: 1.5rem;
+  width: 100%;
+  min-width: 30rem; }
 
 .game {
-  flex: .85; }
+  flex: .85;
+  padding: 20rem;
+  background-color: lightblue;
+  margin-left: 2rem;
+  margin-right: 2rem; }
 
 .container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: sans-serif; }
@@ -27,23 +33,32 @@
     display: flex;
     flex-direction: row; }
   .menu {
-    flex: .25; }
+    flex: .25;
+    border-bottom: none;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    flex-direction: column;
+    justify-content: center; }
   .game {
     flex: .75; } }
 
-.menu_center {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem; }
+.menu_mobile_button {
+  display: inline-block;
+  color: #34314c;
+  font-size: 3.2rem;
+  padding: 1rem;
+  margin-right: 1rem; }
 
 .menu_title {
+  display: inline-block;
   font-family: Arial, sans-serif;
   font-weight: 700;
-  font-size: 4.8rem;
-  padding-bottom: .5rem;
-  color: #34314c; }
+  font-size: 3.2rem;
+  color: #34314c;
+  margin-left: 1rem; }
 
-.menu_settings {
-  display: flex;
+.menu_desktop_settings {
+  display: none;
   flex-direction: column;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem; }
@@ -54,9 +69,22 @@
   padding-left: 1.8rem;
   color: #34314c; }
 
+@media (min-width: 700px) {
+  .menu_title {
+    font-size: 4.8rem; }
+  .menu_desktop_settings {
+    display: flex; }
+  .menu_settings_title {
+    padding-bottom: .5rem; }
+  .menu_mobile {
+    display: none; }
+  .menu_mobile_button {
+    display: none; } }
+
 .button_frame {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  min-width: 30rem; }
 
 .button {
   font-size: 2rem;
@@ -67,9 +95,10 @@
   margin: .9rem;
   border: #34314c 0.3rem solid;
   transition: all .25s;
-  box-shadow: 0rem 0.5rem 0.15rem rgba(0, 0, 0, 0.15); }
+  box-shadow: 0rem 0.5rem 0.15rem rgba(0, 0, 0, 0.15);
+  background-color: white; }
 
-.button:hover {
+.button_unclicked:hover {
   background: rgba(52, 49, 76, 0.25);
   transform: translateY(-0.3rem);
   box-shadow: 0rem 0.9rem 0.15rem rgba(0, 0, 0, 0.12); }

@@ -1,6 +1,7 @@
 .button_frame{
     display: flex;
     justify-content: space-between;
+    min-width: 30rem;
 }
 
 .button{
@@ -13,9 +14,10 @@
     border: $black .3rem solid;
     transition: all .25s;
     box-shadow: 0rem .5rem .15rem rgba(0, 0, 0, .15);
+    background-color: white;
 }
 
-.button:hover{
+.button_unclicked:hover{
     background: rgba(52,49,76,.25);
     transform: translateY(-0.3rem);
     box-shadow: 0rem .9rem .15rem rgba(0, 0, 0, .12);

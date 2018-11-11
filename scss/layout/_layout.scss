@@ -1,26 +1,26 @@
-//@import '../variables/text';
-
-%fill-window-vertical{
-    height: 100vh;
-}
-
 .menu{
-    @extend %fill-window-vertical;
-    flex: .15;
-    min-height: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    border-bottom: $black .5rem solid;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    padding: 1.5rem;
+    width: 100%;
+    min-width: 30rem;
 }
 
 .game{
-    @extend %fill-window-vertical;
     flex: .85;
+    padding: 20rem;
+    background-color: lightblue;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .container{
-    @extend %fill-window-vertical;
+    display: flex;
+    align-items: center;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: $default-font;
@@ -34,6 +34,11 @@
 
     .menu{
         flex: .25;
+        border-bottom: none;
+        margin-left: .25rem;
+        margin-right: .25rem;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .game{
