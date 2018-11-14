@@ -1,7 +1,6 @@
 .menu{
     display: flex;
     flex-direction: row;
-    border-bottom: $black .5rem solid;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
@@ -12,7 +11,7 @@
 .game{
     flex: .85;
     padding: 20rem;
-    background-color: lightblue;
+   // background-color: lightblue;
     margin-left: 2rem;
     margin-right: 2rem;
 }
@@ -34,7 +33,6 @@
 
     .menu{
         flex: .25;
-        border-bottom: none;
         margin-left: .25rem;
         margin-right: .25rem;
         flex-direction: column;
