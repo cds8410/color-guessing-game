@@ -1,60 +1,115 @@
-const rgb = document.getElementById('game_mode_rgb');
-const hex = document.getElementById('game_mode_hex');
+const rgbButtons = document.querySelectorAll('.button_rgb');
+const hexButtons = document.querySelectorAll('.button_hex');
 
-const easy = document.getElementById('game_difficulty_easy');
-const hard = document.getElementById('game_difficulty_hard');
+const easyButtons = document.querySelectorAll('.button_easy');
+const hardButtons = document.querySelectorAll('.button_hard');
 
-const light = document.getElementById('game_theme_light');
-const dark = document.getElementById('game_theme_dark');
+const lightButtons = document.querySelectorAll('.button_light');
+const darkButtons = document.querySelectorAll('.button_dark');
+
+const mobileButton = document.getElementById('mobile_button');
+const mobileShadow = document.querySelector('.menu_mobile_shadow');
+const mobileMenu = document.getElementById('mobile_menu');
 
 let mode = 'rgb';
 let difficulty = 'easy';
 let theme = 'light';
 
-function twoButtonToggle(btn1, btn2) {
-    btn1.classList.toggle('button_unclicked');
-    btn1.classList.toggle('button_clicked');
-    btn2.classList.toggle('button_unclicked');
-    btn2.classList.toggle('button_clicked');
+//add menu button listeners for desktop and mobile buttons at the same time
+{
+    rgbButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (mode != 'rgb') {
+                mode = 'rgb';
+                changeState(rgbButtons, hexButtons);
+            }
+        });
+    });
+
+    hexButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (mode != 'hex') {
+                mode = 'hex';
+                changeState(hexButtons, rgbButtons);
+            }
+        });
+    });
+
+    easyButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (difficulty != 'easy') {
+                difficulty = 'easy';
+                changeState(easyButtons, hardButtons);
+            }
+        });
+    });
+
+    hardButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (difficulty != 'hard') {
+                difficulty = 'hard';
+                changeState(hardButtons, easyButtons);
+            }
+        });
+    });
+
+    lightButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (theme != 'light') {
+                theme = 'light';
+                changeState(lightButtons, darkButtons);
+            }
+        });
+    });
+
+    darkButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (theme != 'dark') {
+                theme = 'dark';
+                changeState(darkButtons, lightButtons);
+            }
+        });
+    });
 }
 
-rgb.addEventListener('click', () => {
-    mode = 'rgb';
-    if (rgb.classList.contains('button_unclicked')) {
-        console.log(1);
-        twoButtonToggle(rgb, hex);
-    }
+//mobile button listener
+mobileButton.addEventListener('click', ()=>{
+    mobileMenu.classList.toggle('is_hidden');
+    mobileShadow.classList.toggle('is_hidden');
 });
 
-hex.addEventListener('click', () => {
-    mode = 'hex';
-    if (hex.classList.contains('button_unclicked')) {
-        twoButtonToggle(rgb, hex);
-    }
-});
+//function set up to toggle between different opposing states
+function changeState(buttons1, buttons2) {
 
-easy.addEventListener('click', () => {
-    difficulty = 'easy';
-    if (easy.classList.contains('button_unclicked')) {
-        twoButtonToggle(easy, hard);
-    }
-});
-hard.addEventListener('click', () => {
-    difficulty = 'hard';
-    if (hard.classList.contains('button_unclicked')) {
-        twoButtonToggle(easy, hard);
-    }
-});
+    //first button check
+    toggleButtons(buttons1);
+    //check
+    buttons1.forEach((button) => {
+        if (!button.classList.contains('button_clicked')) {
+            toggleButton(button);
+        }
+    });
 
-light.addEventListener('click', () => {
-    theme = 'light';
-    if (light.classList.contains('button_unclicked')) {
-        twoButtonToggle(light, dark);
+    //second button change
+    toggleButtons(buttons2);
+    //check
+    buttons2.forEach((button) => {
+        if (!button.classList.contains('button_unclicked')) {
+            toggleButton(button);
+        }
+    });
+
+    //change both buttons in the desktop and mobile menu at the same time
+    function toggleButtons(buttonArrayInput) {
+        buttonArrayInput.forEach((buttonInput) => {
+            toggleButton(buttonInput);
+        });
     }
-});
-dark.addEventListener('click', () => {
-    theme = 'dark';
-    if (dark.classList.contains('button_unclicked')) {
-        twoButtonToggle(light, dark);
+
+    //change the state of a single button
+    function toggleButton(buttonInput) {
+        buttonInput.classList.toggle('button_clicked');
+        buttonInput.classList.toggle('button_unclicked');
     }
-});
+
+}

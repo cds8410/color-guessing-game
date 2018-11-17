@@ -3,6 +3,15 @@
   margin: 0px;
   font-size: 10px; }
 
+.is_hidden {
+  display: none !important; }
+
+@keyframes mobile_frame_animation {
+  from {
+    transform: scaleY(0); }
+  to {
+    transform: scaleY(1); } }
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -10,7 +19,10 @@
   align-items: center;
   padding: 1.5rem;
   width: 100%;
-  min-width: 30rem; }
+  min-width: 30rem;
+  background-color: white;
+  position: relative;
+  z-index: 3; }
 
 .game {
   flex: .85;
@@ -24,7 +36,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  min-width: 30rem; }
 
 @media (min-width: 700px) {
   .container {
@@ -44,11 +57,16 @@
   color: #34314c;
   font-size: 3.2rem;
   padding: 1rem;
-  margin-right: 1rem; }
+  margin-right: 1rem;
+  transition: .25s all; }
+
+.menu_mobile_button:hover {
+  color: rgba(52, 49, 76, 0.5); }
 
 .menu_mobile_frame {
   display: flex;
   position: absolute;
+  z-index: -2;
   background-color: lightsteelblue;
   width: 100vw;
   justify-content: end; }
@@ -57,11 +75,17 @@
   display: flex;
   flex-direction: column;
   position: absolute;
+  z-index: -1;
   background-color: #34314c;
-  border: #34314c 0.5rem solid;
+  border: white .5rem solid;
   padding: 2.5rem;
-  margin-top: 3.8rem;
-  box-shadow: 0.25rem 0.25rem rem rgba(0, 0, 0, 0.75); }
+  margin-top: 3rem;
+  box-shadow: 0.25rem 0.25rem rem rgba(0, 0, 0, 0.75);
+  transform-origin: top;
+  animation-name: mobile_frame_animation;
+  animation-direction: alternate;
+  animation-duration: .25s;
+  animation-timing-function: ease-in; }
 
 .menu_title {
   display: inline-block;
@@ -84,6 +108,15 @@
   margin-top: 1.5rem;
   color: white; }
 
+.menu_mobile_shadow {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -3;
+  min-width: 30rem; }
+
 @media (min-width: 700px) {
   .menu_title {
     font-size: 4.8rem; }
@@ -95,13 +128,15 @@
   .menu_mobile {
     display: none; }
   .menu_mobile_button {
+    display: none; }
+  .menu_mobile_shadow {
     display: none; } }
 
 .button_frame {
   display: flex;
   justify-content: space-between;
   min-width: 30rem;
-  margin-top: -.5rem;
+  margin-top: .25rem;
   margin-bottom: 1.5rem; }
 
 .button {
@@ -129,4 +164,4 @@
 
 @media (min-width: 700px) {
   .button_frame {
-    margin-top: -1.5rem; } }
+    margin-top: .25rem; } }

@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=KoHo|Rosario:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-
+</head>
 <body>
+    <div class = "menu_mobile_shadow is_hidden"></div>
     <div class="container">
         <div class="menu">
 
@@ -19,21 +20,21 @@
                 The Color Game
             </h1>
 
-            <div class="menu_mobile_button">
+            <div id = "mobile_button" class="menu_mobile_button">
                 <i class="fas fa-bars fa-sm"></i>
             </div>
 
-            <div class="menu_mobile_frame">
+            <div id = "mobile_menu" class="menu_mobile_frame is_hidden">
                 <div class="menu_mobile">
                     <div>
                         <div class="menu_settings_title">
                             Game Type
                         </div>
                         <div class="button_frame">
-                            <button onfocus="blur()" id="game_mode_rgb" class="button button_clicked" onclick="">
+                            <button onfocus="blur()" class="button button_clicked button_rgb" onclick="">
                                 RGB
                             </button>
-                            <button onfocus="blur()" id="game_mode_hex" class="button button_unclicked">
+                            <button onfocus="blur()" class="button button_unclicked button_hex">
                                 Hex
                             </button>
                         </div>
@@ -44,10 +45,10 @@
                             Difficulty
                         </div>
                         <div class="button_frame">
-                            <button onfocus="blur()" id="game_difficulty_easy" class="button button_clicked">
+                            <button onfocus="blur()" class="button button_clicked button_easy">
                                 Easy
                             </button>
-                            <button onfocus="blur()" id="game_difficulty_hard" class="button button_unclicked">
+                            <button onfocus="blur()" class="button button_unclicked button_hard">
                                 Hard
                             </button>
                         </div>
@@ -59,10 +60,10 @@
                             Theme
                         </div>
                         <div class="button_frame">
-                            <button onfocus="blur()" id="game_theme_light" class="button button_clicked">
+                            <button onfocus="blur()" class="button button_clicked button_light">
                                 Light
                             </button>
-                            <button onfocus="blur()" id="game_theme_dark" class="button button_unclicked">
+                            <button onfocus="blur()" class="button button_unclicked button_dark">
                                 Dark
                             </button>
                         </div>
@@ -76,10 +77,10 @@
                         Game Type
                     </div>
                     <div class="button_frame">
-                        <button onfocus="blur()" id="game_mode_rgb" class="button button_clicked" onclick="">
+                        <button onfocus="blur()" class="button button_clicked button_rgb" onclick="">
                             RGB
                         </button>
-                        <button onfocus="blur()" id="game_mode_hex" class="button button_unclicked">
+                        <button onfocus="blur()" class="button button_unclicked button_hex">
                             Hex
                         </button>
                     </div>
@@ -90,10 +91,10 @@
                         Difficulty
                     </div>
                     <div class="button_frame">
-                        <button onfocus="blur()" id="game_difficulty_easy" class="button button_clicked">
+                        <button onfocus="blur()" class="button button_clicked button_easy">
                             Easy
                         </button>
-                        <button onfocus="blur()" id="game_difficulty_hard" class="button button_unclicked">
+                        <button onfocus="blur()" class="button button_unclicked button_hard">
                             Hard
                         </button>
                     </div>
@@ -104,10 +105,10 @@
                         Theme
                     </div>
                     <div class="button_frame">
-                        <button onfocus="blur()" id="game_theme_light" class="button button_clicked">
+                        <button onfocus="blur()" id="game_theme_light" class="button button_clicked button_light">
                             Light
                         </button>
-                        <button onfocus="blur()" id="game_theme_dark" class="button button_unclicked">
+                        <button onfocus="blur()" id="game_theme_dark" class="button button_unclicked button_dark">
                             Dark
                         </button>
                     </div>
