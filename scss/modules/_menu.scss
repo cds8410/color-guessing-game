@@ -2,9 +2,13 @@
     display: inline-block;
     color: $black;
     font-size: 3.2rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     margin-right: 1rem;
     transition: .25s all;
+    background-color: white;
+    border: solid .5rem white;
+    box-sizing: border-box;
+    z-index: 5;
 }
 
 .menu_mobile_button:hover{
@@ -24,11 +28,11 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    z-index: -1;
+    z-index: 4;
     background-color: $black;
-    border: white .5rem solid;
     padding: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-right: 4rem;
     box-shadow: .25rem .25rem rem rgba(0, 0, 0, 0.75);
     transform-origin: top;
     animation-name: mobile_frame_animation;
@@ -42,8 +46,10 @@
     font-family: $title-font;
     font-weight: 700;
     font-size: 3.2rem;
+    text-align: center;
     color: $black;
     margin-left: 1rem;
+    transition: .25s all;
 }
 
 .menu_settings{
@@ -67,8 +73,8 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.75);
-    z-index: -3;
     min-width: 30rem;
+    z-index: 3;
 }
 
 @media(min-width: 700px){

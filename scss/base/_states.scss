@@ -1,3 +1,23 @@
 .is_hidden{
     display: none !important;
 }
+
+.is_mobile_on{
+    background-color: $black !important;
+    color: white !important;
+    box-shadow: 0rem 1rem 1rem rgba(0,0,0,.5);
+}
+
+.is_purple:hover{
+    color: rgb(145, 143, 167) !important;
+}
+
+.is_hidden_title{
+    opacity: 0 !important;
+}
+
+@media(min-width: 700px){
+    .is_hidden_title{
+        opacity: 1;
+    }
+}

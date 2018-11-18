@@ -75,7 +75,9 @@ let theme = 'light';
 //mobile button listener
 mobileButton.addEventListener('click', ()=>{
     mobileMenu.classList.toggle('is_hidden');
+    mobileButton.classList.toggle('is_mobile_on');
     mobileShadow.classList.toggle('is_hidden');
+    document.getElementById('menu_title').classList.toggle('is_hidden_title');
 });
 
 //function set up to toggle between different opposing states
