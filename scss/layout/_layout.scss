@@ -1,29 +1,35 @@
-//@import '../variables/text';
-
-%fill-window-vertical{
-    height: 100vh;
-}
-
 .menu{
-    @extend %fill-window-vertical;
-    flex: .15;
-    min-height: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    padding: 1.5rem;
+    width: 100%;
+    min-width: 30rem;
+    background-color: white;
+    position: relative;
+    margin-bottom: 4rem;
+    z-index: 6;
 }
 
 .game{
-    @extend %fill-window-vertical;
-    flex: .85;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    min-width: 30rem;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .container{
-    @extend %fill-window-vertical;
+    display: flex;
+    align-items: center;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: $default-font;
+    min-width: 36rem;
 }
 
 @media(min-width: 700px){
@@ -34,6 +40,11 @@
 
     .menu{
         flex: .25;
+        margin-left: .25rem;
+        margin-right: .25rem;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0rem;
     }
     
     .game{
